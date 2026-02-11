@@ -16,6 +16,7 @@ app = Dash(__name__)
 # Define the app layout
 app.layout = html.Div(children=[
     html.H1(children='Dash Bar Chart Example'),
+    html.H1(children='This is a new deploy'),
     dcc.Graph(
         id='graph_number',
         figure=fig_number
