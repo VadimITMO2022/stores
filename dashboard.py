@@ -8,7 +8,7 @@ df_number=df.groupby('Number')['Revenue'].sum().reset_index()
 fig_number = px.bar(df_number, x="Number", y="Revenue", barmode="group", title="Revenue Amounts by Store")
 
 df_city=df.groupby('City')['Revenue'].sum().reset_index()
-fig_city = px.bar(df_city, x="City", y="Revenue", barmode="group", title="Revenue Amounts by Store")
+fig_city = px.bar(df_city, x="City", y="Revenue", barmode="group", title="Revenue Amounts by City")
 
 # Initialize the Dash app
 app = Dash(__name__)
