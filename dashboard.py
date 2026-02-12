@@ -23,6 +23,7 @@ app.layout = html.Div(children=[
     html.H1(children='5th deploy'),
     html.H1(children='line'),
     html.H1(children='2nd line'),
+    html.H1(children='3rd line'),
     dcc.Graph(
         id='graph_number',
         figure=fig_number
