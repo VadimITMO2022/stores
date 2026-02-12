@@ -12,6 +12,7 @@ fig_city = px.bar(df_city, x="City", y="Revenue", barmode="group", title="Revenu
 
 # Initialize the Dash app
 app = Dash(__name__)
+server=app.server
 
 # Define the app layout
 app.layout = html.Div(children=[

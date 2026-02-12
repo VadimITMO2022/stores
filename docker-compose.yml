@@ -1,0 +1,24 @@
+#version: '3.8'
+
+services:
+  web:
+    build:   # образ для этого контейнера создается из Dockerfile, расположенного в текущем каталоге (.)
+      context: .
+      dockerfile: Dockerfile.app
+    container_name: flask_app_container
+    # Volumes are useful during development for live code changes
+    # volumes:
+    #   - ./app:/app
+    expose:
+      - "8000" # Expose port 8000 internally within the Docker network
+
+  nginx:
+    image: nginx:stable-alpine       # контейнер создается из этого образа 
+    container_name: nginx_proxy
+    ports:  # аналогичен -p  в команде docker run -p для объявления открытых портов и их связывания
+      - "8082:80" # Map port 8083 on the host to port 80 in the container
+    volumes: # аналогичен -v  в команде docker run -v для определения томов и их монтирования
+      # Mount the custom nginx config file
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - web # Ensures the 'web' service starts first
