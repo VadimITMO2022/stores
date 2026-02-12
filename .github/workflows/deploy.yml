@@ -23,7 +23,9 @@ jobs:
             git config --global --add safe.directory ${{ secrets.PROJECT_DIR }} &&
             cd ${{ secrets.PROJECT_DIR }} &&
             git pull origin main &&
-            sudo docker compose restart
+            sudo docker compose down --volumes &&
+            sudo docker rmi nginx:stable-alpine stores_web:latest &&
+            bash build.sh
           '
             
           

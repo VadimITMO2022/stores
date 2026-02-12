@@ -18,7 +18,8 @@ server=app.server
 app.layout = html.Div(children=[
     html.H1(children='Dash Bar Chart Example'),
     html.H1(children='This is a new deploy'),
-    html.H1(children='3-d deploy'),
+    html.H1(children='3d deploy'),
+    html.H1(children='4th deploy'),
     dcc.Graph(
         id='graph_number',
         figure=fig_number
