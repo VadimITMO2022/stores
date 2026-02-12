@@ -12,12 +12,18 @@ fig_city = px.bar(df_city, x="City", y="Revenue", barmode="group", title="Revenu
 
 # Initialize the Dash app
 app = Dash(__name__)
+server=app.server
 
 # Define the app layout
 app.layout = html.Div(children=[
     html.H1(children='Dash Bar Chart Example'),
     html.H1(children='This is a new deploy'),
-    html.H1(children='3-d deploy'),
+    html.H1(children='3d deploy'),
+    html.H1(children='4th deploy'),
+    html.H1(children='5th deploy'),
+    html.H1(children='line'),
+    html.H1(children='2nd line'),
+    html.H1(children='3rd line'),
     dcc.Graph(
         id='graph_number',
         figure=fig_number
