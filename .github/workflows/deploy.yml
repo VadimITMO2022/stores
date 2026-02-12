@@ -22,8 +22,8 @@ jobs:
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} '
             git config --global --add safe.directory ${{ secrets.PROJECT_DIR }} &&
             cd ${{ secrets.PROJECT_DIR }} &&
-            git pull origin main &&
-            bash build.sh
+            git pull origin main &&  
+            sudo docker-compose up --build -d
           '
             
           
